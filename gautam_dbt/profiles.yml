@@ -1,0 +1,22 @@
+gautam_dbt:
+  outputs:
+    dev:
+      catalog: dbt_tutorial_dev
+      host: dbc-e09dac1b-4ad5.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/411be12ab75a20c6
+      schema: default
+      threads: 1
+      # Set DATABRICKS_TOKEN in your shell or CI secret store; never commit a token.
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+      type: databricks
+    prod:
+      catalog: dbt_tutorial_prod
+      host: dbc-e09dac1b-4ad5.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/411be12ab75a20c6
+      schema: default
+      threads: 1
+      # Set DATABRICKS_TOKEN in your shell or CI secret store; never commit a token.
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+      type: databricks
+  target: dev
+
